@@ -1,4 +1,4 @@
-use super::{Expr, Ident};
+use super::{Expr, Ident, Type};
 
 #[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub enum Stmt {
@@ -10,4 +10,6 @@ pub enum Stmt {
 #[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub struct Local {
     pub ident: Ident,
+    pub ty: Option<Type>,
+    pub init: Option<Box<Expr>>,
 }
